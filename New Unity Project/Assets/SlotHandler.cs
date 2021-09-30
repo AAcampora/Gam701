@@ -4,13 +4,13 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class SlotHandler : MonoBehaviour, IDropHandler, IDragHandler {
+public class SlotHandler : MonoBehaviour, IDropHandler {
 
     public bool isCorrect = false;
     public string correctAnswer;
     public string capturedText;
-    public void OnDrop(PointerEventData eventData){
-        if (eventData.pointerDrag != null){
+    public void OnDrop(PointerEventData eventData) {
+        if (eventData.pointerDrag != null) {
             eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition =
                 GetComponent<RectTransform>().anchoredPosition;
 
@@ -18,22 +18,9 @@ public class SlotHandler : MonoBehaviour, IDropHandler, IDragHandler {
 
             Debug.Log(eventData.pointerDrag.GetComponent<Text>().text);
         }
-
-        if (eventData.dragging == true)
-        {
-            capturedText = " ";
-        }
     }
 
-    public void OnDrag(PointerEventData eventData)
-    {
-        if (eventData.pointerDrag == null)
-        {
-            capturedText = " ";
-        }
-    }
-    private void Update()
-    {
+    private void Update() {
         isCorrect = correctAnswer == capturedText ? true : false;
     }
 }

@@ -9,18 +9,31 @@ public class SlotHandler : MonoBehaviour, IDropHandler {
     public bool isCorrect = false;
     public string correctAnswer;
     public string capturedText;
+    public PSlot slot;
+
+    private void Awake() {
+        slot = new PSlot(gameObject.name, isCorrect);
+    }
+
     public void OnDrop(PointerEventData eventData) {
         if (eventData.pointerDrag != null) {
-            eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition =
-                GetComponent<RectTransform>().anchoredPosition;
-
-            capturedText = eventData.pointerDrag.GetComponent<Text>().text;
-
-            Debug.Log(eventData.pointerDrag.GetComponent<Text>().text);
+            //Place object in the right position
+            AnchorTextToSlot(eventData);
+            //check if text is correct
+            CheckAnswer(eventData);
         }
     }
 
-    private void Update() {
-        isCorrect = correctAnswer == capturedText ? true : false;
+    private PointerEventData AnchorTextToSlot(PointerEventData data) {
+        var textToSlot = data.pointerDrag.GetComponent<RectTransform>();
+        textToSlot.anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
+
+        return data;
+    }
+
+    private bool CheckAnswer(PointerEventData data)
+    {
+        capturedText = data.pointerDrag.GetComponent<Text>().text;
+        return isCorrect = correctAnswer == capturedText ? true : false;
     }
 }

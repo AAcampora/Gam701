@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Fungus;
 
 public class SlotManager : MonoBehaviour
 {
     [SerializeField]
     private SlotHandler[] slots;
+
+    public Flowchart fc;
 
     public bool ValidateResponse()
     {
@@ -22,7 +25,10 @@ public class SlotManager : MonoBehaviour
 
     private void Update()
     {
-        //Debug.Log(ValidateResponse());
+        if (ValidateResponse())
+        {
+            fc.SetBooleanVariable("Puzzle1", true);
+        }
     }
 
 }

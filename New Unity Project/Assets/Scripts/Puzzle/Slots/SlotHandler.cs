@@ -10,22 +10,24 @@ public class SlotHandler : MonoBehaviour, IDropHandler {
     public string correctAnswer;
     public string capturedText;
     public PointerEventData obj;
+    public SlotManager SM;
 
+    private void Awake()
+    {
+        SM = this.gameObject.GetComponentInParent<SlotManager>();
+    }
     public void OnDrop(PointerEventData eventData) {
         if (eventData.pointerDrag != null) {
 
-            obj = eventData;
             //Place object in the right position
             AnchorTextToSlot(eventData);
             //check if text is correct
             CheckAnswer(eventData);
-            Debug.Log(obj.pointerDrag.name);
-        }
-    }
 
-    public void Update()
-    {
-        
+            if (SM != null) {
+                SM.ValidateResponse();
+            }
+        }
     }
 
     private PointerEventData AnchorTextToSlot(PointerEventData data) {

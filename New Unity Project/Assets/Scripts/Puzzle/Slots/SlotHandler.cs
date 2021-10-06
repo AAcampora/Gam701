@@ -9,14 +9,23 @@ public class SlotHandler : MonoBehaviour, IDropHandler {
     public bool isCorrect = false;
     public string correctAnswer;
     public string capturedText;
+    public PointerEventData obj;
 
     public void OnDrop(PointerEventData eventData) {
         if (eventData.pointerDrag != null) {
+
+            obj = eventData;
             //Place object in the right position
             AnchorTextToSlot(eventData);
             //check if text is correct
             CheckAnswer(eventData);
+            Debug.Log(obj.pointerDrag.name);
         }
+    }
+
+    public void Update()
+    {
+        
     }
 
     private PointerEventData AnchorTextToSlot(PointerEventData data) {

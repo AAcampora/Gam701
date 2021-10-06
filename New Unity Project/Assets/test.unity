@@ -176,9 +176,6 @@ MonoBehaviour:
   isCorrect: 0
   correctAnswer: Adult
   capturedText: 
-  slot:
-    name: 
-    state: 0
 --- !u!114 &309232150
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -988,9 +985,6 @@ MonoBehaviour:
   isCorrect: 0
   correctAnswer: Old
   capturedText: 
-  slot:
-    name: 
-    state: 0
 --- !u!114 &1224578162
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1139,7 +1133,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -169.96625, y: 91}
+  m_AnchoredPosition: {x: -169.97, y: 91}
   m_SizeDelta: {x: 88.3474, y: 39.322}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1451473316
@@ -1157,9 +1151,6 @@ MonoBehaviour:
   isCorrect: 0
   correctAnswer: Young
   capturedText: 
-  slot:
-    name: 
-    state: 0
 --- !u!114 &1451473317
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1262,6 +1253,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 845615318}
+  isDraggedAway: 0
 --- !u!114 &1712186669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1340,7 +1332,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 81, y: 14.74}
+  m_AnchoredPosition: {x: 146.26, y: -14.74}
   m_SizeDelta: {x: 73.0519, y: 29.4808}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &1749781680
@@ -1368,6 +1360,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 845615318}
+  isDraggedAway: 0
 --- !u!114 &1749781682
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1462,6 +1455,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 845615318}
+  isDraggedAway: 0
 --- !u!225 &1844136436
 CanvasGroup:
   m_ObjectHideFlags: 0

@@ -7,10 +7,22 @@ public class SlotManager : MonoBehaviour
     [SerializeField]
     private SlotHandler[] slots;
 
-    private void Awake(){
-        
-        slots[1].slot.name
+    public bool ValidateResponse()
+    {
+        for (int i = 0; i < slots.Length; i++)
+        {
+            if(slots[i].isCorrect == false)
+            {
+                return false;
+            }
+        }
+
+        return true;
     }
 
+    private void Update()
+    {
+        //Debug.Log(ValidateResponse());
+    }
 
 }

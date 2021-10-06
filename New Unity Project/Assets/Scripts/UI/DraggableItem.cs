@@ -5,15 +5,15 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 public class DraggableItem : MonoBehaviour, 
-    IPointerDownHandler, 
     IBeginDragHandler,
     IEndDragHandler, 
-    IDragHandler {
+    IDragHandler{
 
     [SerializeField] private Canvas canvas;
 
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;
+    public bool isDraggedAway;
 
     private void Awake() {
         rectTransform = GetComponent<RectTransform>();
@@ -21,8 +21,7 @@ public class DraggableItem : MonoBehaviour,
     }
 
     #region CallBack Functions
-    public void OnPointerDown(PointerEventData eventData) {
-    }
+
     public void OnDrag(PointerEventData eventData) {
         rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
     }
@@ -30,11 +29,14 @@ public class DraggableItem : MonoBehaviour,
     public void OnBeginDrag(PointerEventData eventData) {
         canvasGroup.blocksRaycasts = false;
         canvasGroup.alpha = 0.6f;
+        isDraggedAway = true;
     }
     public void OnEndDrag(PointerEventData eventData) {
         canvasGroup.blocksRaycasts = true;
         canvasGroup.alpha = 1.0f;
+        isDraggedAway = false;
     }
+
     #endregion
 }
 

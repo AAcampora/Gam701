@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class SlotManager : MonoBehaviour
 {
-    public PSlot[] slots;
+    [SerializeField]
+    private SlotHandler[] slots;
 
     private void Awake(){
         
-
+        slots[1].slot.name
     }
 
 

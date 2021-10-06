@@ -9,11 +9,6 @@ public class SlotHandler : MonoBehaviour, IDropHandler {
     public bool isCorrect = false;
     public string correctAnswer;
     public string capturedText;
-    public PSlot slot;
-
-    private void Awake() {
-        slot = new PSlot(gameObject.name, isCorrect);
-    }
 
     public void OnDrop(PointerEventData eventData) {
         if (eventData.pointerDrag != null) {

@@ -6,7 +6,7 @@ using Fungus;
 public class NameInsert : MonoBehaviour
 {
     public Flowchart fc;
-
+    public Character ch;
     public void SaveName(string name)
     {
         fc.SetStringVariable("player", name);

@@ -1,0 +1,2 @@
+C:\Users\acamp\Desktop\repo\Gam701\New Unity Project\obj\Debug\Fungus.FungusLuaJSONCheckerEditor.csprojAssemblyReference.cache
+C:\Users\acamp\Desktop\repo\Gam701\New Unity Project\obj\Debug\Fungus.FungusLuaJSONCheckerEditor.csproj.CoreCompileInputs.cache

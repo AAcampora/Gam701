@@ -11,11 +11,6 @@ public class timer : MonoBehaviour
     public float time;
     public Flowchart fc;
 
-    private void Start()
-    {
-        time = fc.GetFloatVariable("TimeAmount");
-    }
-
     // Update is called once per frame
     void Update()
     {

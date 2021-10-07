@@ -27,7 +27,7 @@ public class SlotManager : MonoBehaviour
     {
         if (ValidateResponse())
         {
-            fc.SetBooleanVariable("Puzzle1", true);
+            fc.SetBooleanVariable("isPuzzle", true);
         }
     }
 
